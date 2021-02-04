@@ -182,8 +182,12 @@ namespace DocumentManagerUtil
                 string CADDSubfolderDef = JsonConvert.SerializeObject(new { folderName = "DRWG", folderDescription = "CADD Drawings - electronic" });
                 string PlansSubfolderDef = JsonConvert.SerializeObject(new { folderName = "PLANS", folderDescription = "Scanned plans - static" });
                 string LRFieldInvestigationsTypeDef = JsonConvert.SerializeObject(new { folderName = "FLDINV", folderDescription = "Field Investigation Reports" });
-                string LRBridgeStructuralModels = JsonConvert.SerializeObject(new { folderName = "MODEL", folderDescription = "Bridge Structural Models" });
 
+
+                string LRReferencePlansDef = JsonConvert.SerializeObject(new { folderName = "PLANS", folderDescription = "LR Reference Plans" });
+                string LRStructuralModelsDef = JsonConvert.SerializeObject(new { folderName = "MODEL", folderDescription = "Bridge Structural Models" });
+                string LRDataFilesDef = JsonConvert.SerializeObject(new { folderName = "DATA", folderDescription = "Bridge SIA Data Files" });
+                
                 string PhotosFolderDef = JsonConvert.SerializeObject(new { folderName = "PHOTOS", folderDescription = "PHOTOS not categorized" });
                 string QAQCFolderDef = JsonConvert.SerializeObject(new { folderName = "QAQC", folderDescription = "QAQC documents root" });
 
@@ -237,7 +241,9 @@ namespace DocumentManagerUtil
                 theDt.Rows.Add(new object[4] { 2, 1600, 16,   /*"16", "1600",*/  GeneralSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1610, 16,  /* "16", "1610",*/  ReportsSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1620, 16, /*  "16", "1620", */ LRFieldInvestigationsTypeDef });
-                theDt.Rows.Add(new object[4] { 2, 1630, 16,   /*"16", "1630", */ LRBridgeStructuralModels });
+                theDt.Rows.Add(new object[4] { 2, 1630, 16,   /*"16", "1630", */ LRReferencePlansDef });
+                theDt.Rows.Add(new object[4] { 2, 1640, 16,   /*"16", "1640", */ LRStructuralModelsDef });
+                theDt.Rows.Add(new object[4] { 2, 1650, 16,   /*"16", "1640", */ LRDataFilesDef });
                 theDt.Rows.Add(new object[4] { 2, 1688, 16, /*  "16", "1688",*/  ImagesSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1699, 16, /* "16", "1699",*/ FormsSubfolderDef });
 
