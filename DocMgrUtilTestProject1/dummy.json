@@ -1,0 +1,598 @@
+
+{
+    "tree": {
+        "folders": [
+            {
+                "metaDataGuid": "458AAB6BD5C949E5B6DF6CDEFD696C93",
+                "level": 0,
+                "docType": "0",
+                "parentDocType": "-1",
+                "docFolderName": "/413700012101002",
+                "docFolderDescription": "Bridge Folders Root",
+                "docFolderPath": "",
+                "docSubFolder": [
+                    {
+                        "metaDataGuid": "ABE250BEC9E54710AA6FA843B09BD7FA",
+                        "level": 1,
+                        "docType": "10",
+                        "parentDocType": "0",
+                        "docFolderName": "NBI",
+                        "docFolderDescription": "NBI Inspections Root",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "7F799D009312477CB6B82972DB9D5FBD",
+                                "level": 2,
+                                "docType": "1000",
+                                "parentDocType": "10",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/NBI/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "B8645B47645F42B8A0A5026E741FB199",
+                                "level": 2,
+                                "docType": "1010",
+                                "parentDocType": "10",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/NBI/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "D74CEB47AE0C4AA38F0F11E74B15D795",
+                                "level": 2,
+                                "docType": "1088",
+                                "parentDocType": "10",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/NBI/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "CA5C2FE27366429DB450B7FC199F1BCD",
+                                "level": 2,
+                                "docType": "1099",
+                                "parentDocType": "10",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/NBI/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "DC08BFDD356A4001A2E309A16B0A8D1E",
+                        "level": 1,
+                        "docType": "11",
+                        "parentDocType": "0",
+                        "docFolderName": "FC",
+                        "docFolderDescription": "Fracture Critical Inspections Root",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "4F9FF025822C44929AC7ED8FE11AD552",
+                                "level": 2,
+                                "docType": "1100",
+                                "parentDocType": "11",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/FC/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "9B4D793F99DB46DAB158F71AA9DC2117",
+                                "level": 2,
+                                "docType": "1110",
+                                "parentDocType": "11",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/FC/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "518C79D59CBB40DBB8C7B38C52B6DC8B",
+                                "level": 2,
+                                "docType": "1188",
+                                "parentDocType": "11",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/FC/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "CA797A74417D43068C0C3CBBC256CA8F",
+                                "level": 2,
+                                "docType": "1199",
+                                "parentDocType": "11",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/FC/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "AAA0664A19C048A8906D18B7725D7A55",
+                        "level": 1,
+                        "docType": "12",
+                        "parentDocType": "0",
+                        "docFolderName": "UW",
+                        "docFolderDescription": "Underwater Inspections Root",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "ED0AA914AC89476CA10A8DF6121E77EA",
+                                "level": 2,
+                                "docType": "1200",
+                                "parentDocType": "12",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/UW/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "AE01132DB12E42B58931D519016B3EE9",
+                                "level": 2,
+                                "docType": "1210",
+                                "parentDocType": "12",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/UW/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "20CCB30AE9FB45EE8C89CC563ADD61FB",
+                                "level": 2,
+                                "docType": "1288",
+                                "parentDocType": "12",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/UW/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "611E225C4A814246890C45FD5F03AD6E",
+                                "level": 2,
+                                "docType": "1299",
+                                "parentDocType": "12",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/UW/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "3F7B90B25A2A473F8163428293D8D771",
+                        "level": 1,
+                        "docType": "30",
+                        "parentDocType": "0",
+                        "docFolderName": "SPI/OS",
+                        "docFolderDescription": "Other Special Inspections",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "F1F134B9210B4F2292755DEC8E6949EF",
+                                "level": 2,
+                                "docType": "3000",
+                                "parentDocType": "30",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/OS/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "E413F633505A463D9EF3B5A6D50955E5",
+                                "level": 2,
+                                "docType": "3010",
+                                "parentDocType": "30",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/OS/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "60F68A1DFF834799A67246524E2ADE04",
+                                "level": 2,
+                                "docType": "3088",
+                                "parentDocType": "30",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/OS/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "37601F9D2EB5432B8E2E442DBE5607CD",
+                                "level": 2,
+                                "docType": "3099",
+                                "parentDocType": "30",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/OS/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "1509E49CFB7A4A6D9BB0C2D0A2691EBA",
+                        "level": 1,
+                        "docType": "14",
+                        "parentDocType": "0",
+                        "docFolderName": "SCOUR",
+                        "docFolderDescription": "Scour Program Documents",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "B8227EEF29234494B297C871C9BBAC28",
+                                "level": 2,
+                                "docType": "1400",
+                                "parentDocType": "14",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "12455FF6CCD84FDB91B70B97210A25C8",
+                                "level": 2,
+                                "docType": "1410",
+                                "parentDocType": "14",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "9A777205B26E497FBA003FCF2336AC2B",
+                                "level": 2,
+                                "docType": "1420",
+                                "parentDocType": "14",
+                                "docFolderName": "113",
+                                "docFolderDescription": "113 Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/113",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "151156B196EF49A38D2A099886815BA8",
+                                "level": 2,
+                                "docType": "1430",
+                                "parentDocType": "14",
+                                "docFolderName": "POA",
+                                "docFolderDescription": "Plans of Action - Original",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/POA",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "3F982BCE692E458F81D955EBBCD0149E",
+                                "level": 2,
+                                "docType": "1435",
+                                "parentDocType": "14",
+                                "docFolderName": "POA",
+                                "docFolderDescription": "Plans of Action - Amended",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/POA",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "82111743965D4AA98D3CF0AE8E3DF55C",
+                                "level": 2,
+                                "docType": "1440",
+                                "parentDocType": "14",
+                                "docFolderName": "POA",
+                                "docFolderDescription": "Plans of Action - Retired",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/POA",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "635D3BAF99FE43699C4DF23EF0AB89E0",
+                                "level": 2,
+                                "docType": "1488",
+                                "parentDocType": "14",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "B72C6DD3A36946B49BCEA6A3DF9B7EEE",
+                                "level": 2,
+                                "docType": "1499",
+                                "parentDocType": "14",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SCOUR/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "518DF898C08D425CA8D98D124BD35B93",
+                        "level": 1,
+                        "docType": "15",
+                        "parentDocType": "0",
+                        "docFolderName": "CIF",
+                        "docFolderDescription": "Critical Findings Inspection Documents",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "D5B5D2E430124C509C5B6784C555BE36",
+                                "level": 2,
+                                "docType": "1500",
+                                "parentDocType": "15",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/CIF/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "0BB8B06454DD427F80A80E65F41ECFC3",
+                                "level": 2,
+                                "docType": "1510",
+                                "parentDocType": "15",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/CIF/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "75993D10111B42AF88B6CE5F87D247FC",
+                                "level": 2,
+                                "docType": "1588",
+                                "parentDocType": "15",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/CIF/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "238E29EECD524BBB8EC41310DB1D6C45",
+                                "level": 2,
+                                "docType": "1599",
+                                "parentDocType": "15",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/CIF/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "F0163BAEF83A4ACD89B06FCC925B4440",
+                        "level": 1,
+                        "docType": "16",
+                        "parentDocType": "0",
+                        "docFolderName": "LR",
+                        "docFolderDescription": "Load Rating Program Documents",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "A65D991B764440D2B52DF719660B40E7",
+                                "level": 2,
+                                "docType": "1600",
+                                "parentDocType": "16",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/LR/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "F01CFD71F3A14388AA7372712946BB20",
+                                "level": 2,
+                                "docType": "1610",
+                                "parentDocType": "16",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/LR/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "A114EE64396D44C08D968A9BAE4B3F7E",
+                                "level": 2,
+                                "docType": "1620",
+                                "parentDocType": "16",
+                                "docFolderName": "FLDINV",
+                                "docFolderDescription": "Field Investigation Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/LR/FLDINV",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "8689BA02D3374C23A3EAF867E82AF870",
+                                "level": 2,
+                                "docType": "1630",
+                                "parentDocType": "16",
+                                "docFolderName": "MODEL",
+                                "docFolderDescription": "Bridge Structural Models",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/LR/MODEL",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "74BB5EC726E44C5B950FA1D5325914CE",
+                                "level": 2,
+                                "docType": "1688",
+                                "parentDocType": "16",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/LR/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "459728B86F4446719B2B378B17930290",
+                                "level": 2,
+                                "docType": "1699",
+                                "parentDocType": "16",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/LR/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "486AC10F3D314225A17BDBEAB6764E6C",
+                        "level": 1,
+                        "docType": "17",
+                        "parentDocType": "0",
+                        "docFolderName": "DSGN",
+                        "docFolderDescription": "Bridge-specific design plans",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "DC9CD8D06ECE4C9386125F091A8FBC75",
+                                "level": 2,
+                                "docType": "1700",
+                                "parentDocType": "17",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/DSGN/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "9C4D5B37E74647B3BF5BB71B950D48C6",
+                                "level": 2,
+                                "docType": "1710",
+                                "parentDocType": "17",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/DSGN/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "06A6C9A8FA424EFFAB4B9ECF269177FF",
+                                "level": 2,
+                                "docType": "1720",
+                                "parentDocType": "17",
+                                "docFolderName": "DRWG",
+                                "docFolderDescription": "CADD Drawings - electronic",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/DSGN/DRWG",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "E496AED510D94F0F90A7B22EE1E35088",
+                                "level": 2,
+                                "docType": "1788",
+                                "parentDocType": "17",
+                                "docFolderName": "PLANS",
+                                "docFolderDescription": "Scanned plans - static",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/DSGN/PLANS",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "7021E4BEF6FC466C9750E30395CF502C",
+                                "level": 2,
+                                "docType": "1799",
+                                "parentDocType": "17",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/DSGN/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "6275B3FE6B774F60B1BE47CBCD491C8C",
+                        "level": 1,
+                        "docType": "40",
+                        "parentDocType": "0",
+                        "docFolderName": "SPI/PH",
+                        "docFolderDescription": "Pin and Hanger Inspections",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "11DD1802AE5C4207A38A04D077356B27",
+                                "level": 2,
+                                "docType": "4000",
+                                "parentDocType": "40",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/PH/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "BD039595C03F46B0AEDF6C6A496BA30F",
+                                "level": 2,
+                                "docType": "4010",
+                                "parentDocType": "40",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/PH/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "67774EF36A874C51A8755C7B82FE3885",
+                                "level": 2,
+                                "docType": "4088",
+                                "parentDocType": "40",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/PH/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "071ACC85BB8A4E3FBD196D7EA2C07A94",
+                                "level": 2,
+                                "docType": "4099",
+                                "parentDocType": "40",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/PH/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    },
+                    {
+                        "metaDataGuid": "BA77D6BE9A5846E3B2FCBDCE4DDA70F1",
+                        "level": 1,
+                        "docType": "50",
+                        "parentDocType": "0",
+                        "docFolderName": "SPI/DMG",
+                        "docFolderDescription": "Damage/Accident Investigations",
+                        "docFolderPath": "",
+                        "docSubFolder": [
+                            {
+                                "metaDataGuid": "B64D49E2BB7847229B97D18335D4BABE",
+                                "level": 2,
+                                "docType": "5000",
+                                "parentDocType": "50",
+                                "docFolderName": "GEN",
+                                "docFolderDescription": "General",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/DMG/GEN",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "CA11B44234684B8A908BDB19A6D0327E",
+                                "level": 2,
+                                "docType": "5010",
+                                "parentDocType": "50",
+                                "docFolderName": "RPT",
+                                "docFolderDescription": "Reports",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/DMG/RPT",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "142261FC2D8D4AD59476D96F793C8A1A",
+                                "level": 2,
+                                "docType": "5088",
+                                "parentDocType": "50",
+                                "docFolderName": "PIX",
+                                "docFolderDescription": "Image Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/DMG/PIX",
+                                "docSubFolder": []
+                            },
+                            {
+                                "metaDataGuid": "2F3AEB8274B04109A940A24139E41A1B",
+                                "level": 2,
+                                "docType": "5099",
+                                "parentDocType": "50",
+                                "docFolderName": "FRM",
+                                "docFolderDescription": "Form Files",
+                                "docFolderPath": "X:/Docs/District 04 - Chanute/Allen/Iola PCG/413700012101002/SPI/DMG/FRM",
+                                "docSubFolder": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
