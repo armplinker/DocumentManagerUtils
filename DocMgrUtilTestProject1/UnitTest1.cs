@@ -188,7 +188,7 @@ namespace DocMgrUtilTestProject1
 
 
         [TestMethod]
-        private void GetBridgeFolderFromJSON()
+        public void GetBridgeFolderFromJSON()
         {
             var utils = new DocMgrUtils();
 
@@ -197,8 +197,27 @@ namespace DocMgrUtilTestProject1
             var jSon = utils.GetAllBridgeFoldersJson(bridgeIdentifier);
 
             var path = utils.GetBridgeFolderBySubTypeKey(jSon, "1400");
+            Console.WriteLine(path);
+        }
+
+        [TestMethod]
+        public void GetDocFolderAppSettingsFromJSON()
+        {
+            var utils = new DocMgrUtils();
+
+            var bridgeIdentifier = @"000301061704820";
+
+            var jSon = utils.GetAllBridgeFoldersJson(bridgeIdentifier);
+
+            var settings = utils.GetDocFolderAppSettings().ToArray();
+
+            foreach (var setting in settings)
+            {
+                Console.WriteLine(setting);
+            }
 
         }
+
 
     }
 }
