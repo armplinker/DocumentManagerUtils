@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /app_folder/Oracle.ManagedDataAccess.dll
 /MigrationBackup/*
+/app_folder/Global.cs

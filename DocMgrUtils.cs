@@ -211,7 +211,7 @@ namespace DocumentManagerUtil
                 string SPI_OS_RootDef = JsonConvert.SerializeObject(new { folderName = "SPI/OS", parentFolderName = "", folderDescription = "Other Special Inspection Root" });
                 string SPI_DMG_RootDef = JsonConvert.SerializeObject(new { folderName = "SPI/DMG", parentFolderName = "", folderDescription = "Damage and Accident Investigation Root" });
                 string SPI_PH_RootDef = JsonConvert.SerializeObject(new { folderName = "SPI/PH", parentFolderName = "", folderDescription = "Pin and Hanger Inspection Root" });
-                string BridgeDesignPlans_RootDef = JsonConvert.SerializeObject(new { folderName = "DSGN", parentFolderName = "", folderDescription = "Bridge-Specific Design Plans Root" });
+                string BridgeDesignPlans_RootDef = JsonConvert.SerializeObject(new { folderName = @"DSGN", parentFolderName = "", folderDescription = "Bridge-Specific Design Plans Root" });
                 string ScourRootDef = JsonConvert.SerializeObject(new { folderName = "SCOUR", parentFolderName = "", folderDescription = "Scour Program Documents Root" });
                 string LoadRatingsRootDef = JsonConvert.SerializeObject(new { folderName = "LR", parentFolderName = "", folderDescription = "Load Rating Program Documents Root" });
                 string CriticalFindingsRootDef = JsonConvert.SerializeObject(new { folderName = "CIF", parentFolderName = "", folderDescription = "Critical Findings Inspection Documents Root" });
@@ -227,8 +227,8 @@ namespace DocumentManagerUtil
                 string ScourRetiredPOASubfolderDef = JsonConvert.SerializeObject(new { folderName = "POA", folderDescription = "Plans of Action - Retired" });
 
                 // plan subtypes
-                string CADDSubfolderDef = JsonConvert.SerializeObject(new { folderName = "DRWG", folderDescription = "CADD Drawings - electronic" });
-                string PlansSubfolderDef = JsonConvert.SerializeObject(new { folderName = "PLANS", folderDescription = "Scanned plans - static" });
+                string CADDSubfolderDef = JsonConvert.SerializeObject(new { folderName = @"DRWG", folderDescription = "CADD Drawings - electronic" });
+                string PlansSubfolderDef = JsonConvert.SerializeObject(new { folderName = @"PLANS", folderDescription = "Scanned plans - static" });
                 string LRFieldInvestigationsTypeDef = JsonConvert.SerializeObject(new { folderName = "FLDINV", folderDescription = "Field Investigation Reports" });
                 string LRBridgeStructuralModels = JsonConvert.SerializeObject(new { folderName = "MODEL", folderDescription = "Bridge Structural Models" });
 
@@ -273,6 +273,9 @@ namespace DocumentManagerUtil
                 theDt.Rows.Add(new object[4] { 2, 1440, 14,  /*  "1440","14",*/  ScourRetiredPOASubfolderDef });
 
                 theDt.Rows.Add(new object[4] { 2, 1488, 14,  /*  "1488","14",*/  ImagesSubfolderDef });
+                theDt.Rows.Add(new object[4] { 2, 1496, 14, /* "1496", "14",*/ FormsSubfolderDef });
+                theDt.Rows.Add(new object[4] { 2, 1497, 14, /* "1497", "14",*/ FormsSubfolderDef });
+                theDt.Rows.Add(new object[4] { 2, 1498, 14, /* "1498", "14",*/ FormsSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1499, 14, /* "1499", "14",*/ FormsSubfolderDef });
 
                 theDt.Rows.Add(new object[4] { 1, 15, 0,  /*"15", "",*/ CriticalFindingsRootDef });
@@ -293,7 +296,7 @@ namespace DocumentManagerUtil
                 theDt.Rows.Add(new object[4] { 2, 1700, 17, /*   "1700","17", */  GeneralSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1710, 17, /*  "1710","17",  */  ReportsSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1720, 17,  /*  "1720","17",*/  CADDSubfolderDef });
-                theDt.Rows.Add(new object[4] { 2, 1788, 17, /*   "1788","17", */  PlansSubfolderDef });
+                theDt.Rows.Add(new object[4] { 2, 1730, 17, /*   "1788","17", */  PlansSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1799, 17,  /*  "1799","17",*/  FormsSubfolderDef });
 
                 theDt.Rows.Add(new object[4] { 1, 40, 0, /* "40","", */ SPI_PH_RootDef });
@@ -309,6 +312,7 @@ namespace DocumentManagerUtil
                 theDt.Rows.Add(new object[4] { 2, 5099, 50,   /* "5099", "50",*/ FormsSubfolderDef });
 
                 theDt.Rows.Add(new object[4] { 1, 80, 0,   /*  "80", "", */ PhotosFolderDef });
+                theDt.Rows.Add(new object[4] { 2, 8010, 80,   /*  "80", "", */ GeneralSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 8088, 80,  /*  "8088", "21",*/ ImagesSubfolderDef });
 
                 theDt.Rows.Add(new object[4] { 1, 90, 0,   /*  "90", "", */ QAQCFolderDef });
