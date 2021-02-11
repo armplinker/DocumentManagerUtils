@@ -17,27 +17,27 @@ namespace DocumentManagerUtil
         private const string DocRootFolder = "Docs";
         private class DocFolder
         {
-            public string metaDataGuid { get; set; }
+            public string MetaDataGuid { get; set; }
             // ignore the relationship codes.  We only want the string document types.
             [JsonIgnore]
             public int Id { get; set; } //1100
             [JsonIgnore]
-            public int parentId { get; set; } //11
+            public int ParentId { get; set; } //11
 
-            public int level { get; set; }  // 0, 1 , 2 ,3
-            public string docType { get; set; } // "1100"
-            public string parentDocType { get; set; } // "11"
-            public string docFolderName { get; set; }
-            public string docFolderDescription { get; set; } // helptext	
-            public string docFolderPath { get; set; }
-            public string appSettingsKeyName;
-            public string appSettingsValue;
-            public string appSettingsFolderPath { get; set; }
-            public List<DocFolder> docSubFolder { get; set; }
+            public int Level { get; set; }  // 0, 1 , 2 ,3
+            public string DocType { get; set; } // "1100"
+            public string ParentDocType { get; set; } // "11"
+            public string DocFolderName { get; set; }
+            public string DocFolderDescription { get; set; } // helptext	
+            public string DocFolderPath { get; set; }
+            public string AppSettingsKeyName;
+            public string AppSettingsValue;
+            public string AppSettingsFolderPath { get; set; }
+            public List<DocFolder> DocSubFolder { get; set; }
 
             public DocFolder()
             {
-                docSubFolder = new List<DocFolder>();
+                DocSubFolder = new List<DocFolder>();
             }
 
         }
@@ -78,7 +78,7 @@ namespace DocumentManagerUtil
             var stripCharsPattern = @"(?i)(?<chars>[\W.,;_@_\- -[\\/]])+|(?<slashes>[\\/])+";
             var stripCharsReplace = @"_";
             string key = Regex.Replace($"{name1}_{name2}".Trim(), stripCharsPattern, stripCharsReplace, RegexOptions.IgnoreCase).TrimEnd('_').TrimStart('_').ToLower();
-            string appStringFmt = $"<add key=\"fldr_{{0}}\" value=\"{{1}}\" />";
+            string appStringFmt = $@"<add key=""fldr_{{0}}"" value=""{{1}}"" />";
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(string.Format(appStringFmt, key, settingValue));
@@ -232,8 +232,8 @@ namespace DocumentManagerUtil
                 string LRFieldInvestigationsTypeDef = JsonConvert.SerializeObject(new { folderName = "FLDINV", folderDescription = "Field Investigation Reports" });
                 string LRBridgeStructuralModels = JsonConvert.SerializeObject(new { folderName = "MODEL", folderDescription = "Bridge Structural Models" });
 
-                string PhotosFolderDef = JsonConvert.SerializeObject(new { folderName = "PHOTOS", folderDescription = "PHOTOS not categorized" });
-                string QAQCFolderDef = JsonConvert.SerializeObject(new { folderName = "QAQC", folderDescription = "QAQC documents root" });
+                string PhotosFolderDef = JsonConvert.SerializeObject(new { folderName = "PHOTOS", folderDescription = "PHOTOS not categorized Root" });
+                string QAQCFolderDef = JsonConvert.SerializeObject(new { folderName = "QAQC", folderDescription = "QAQC documents Root" });
 
 
 
@@ -257,7 +257,7 @@ namespace DocumentManagerUtil
                 theDt.Rows.Add(new object[4] { 2, 1210, 12, /*  "1210", "12", */  ReportsSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1288, 12,  /*  "1288","12",*/  ImagesSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1299, 12, /* "1299", "12", */ FormsSubfolderDef });
-
+                // OS special inspections - not damage or P&H
                 theDt.Rows.Add(new object[4] { 1, 30, 0,    /* "30","",*/ SPI_OS_RootDef });
                 theDt.Rows.Add(new object[4] { 2, 3000, 30, /* "3000", "30",*/  GeneralSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 3010, 30,  /*  "3010", "30",*/  ReportsSubfolderDef });
@@ -298,13 +298,14 @@ namespace DocumentManagerUtil
                 theDt.Rows.Add(new object[4] { 2, 1720, 17,  /*  "1720","17",*/  CADDSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1730, 17, /*   "1788","17", */  PlansSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 1799, 17,  /*  "1799","17",*/  FormsSubfolderDef });
-
+                // Special inspections - ACCIDENT AND DAMAGE Investigations
                 theDt.Rows.Add(new object[4] { 1, 40, 0, /* "40","", */ SPI_PH_RootDef });
                 theDt.Rows.Add(new object[4] { 2, 4000, 40,  /* "4000",  "40",*/  GeneralSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 4010, 40,  /* "4010", "40",*/  ReportsSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 4088, 40,   /* "4088","40", */ ImagesSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 4099, 40,  /*  "4099","40",*/ FormsSubfolderDef });
 
+                // Special inspections - PIN AND HANGER
                 theDt.Rows.Add(new object[4] { 1, 50, 0,   /*  "50", "", */ SPI_DMG_RootDef });
                 theDt.Rows.Add(new object[4] { 2, 5000, 50,  /*  "5000", "50",*/ GeneralSubfolderDef });
                 theDt.Rows.Add(new object[4] { 2, 5010, 50,  /*  "5010", "50", */ ReportsSubfolderDef });
@@ -324,8 +325,8 @@ namespace DocumentManagerUtil
                 DataView dv = theDt.DefaultView;
 
                 dv.Sort = "parentid asc, resourceid asc";
-                DataTable sortedDT = dv.ToTable();
-                return sortedDT;
+                DataTable sortedDt = dv.ToTable("SortedFolderDefinitions");
+                return sortedDt;
             }
             catch
             {
@@ -508,7 +509,10 @@ namespace DocumentManagerUtil
         /// <returns></returns>
         public string GenerateBridgeFolderDefsJson(string jsonRoot, string bridgeIdentifier, string bridge_gd, string district, string county, string bridgegroup, string docRoot)
         {
+            try
+            {
 
+            
             string prefix = System.IO.Path.Combine(docRoot, district, county, bridgegroup).Replace("\\", "/");
 
             DataTable dtFolders = GenerateFolderTable();
@@ -517,16 +521,16 @@ namespace DocumentManagerUtil
             dtFolders.Rows.Cast<DataRow>()
                      .Select(r => new DocFolder
                      {
-                         level = r.Field<int>("LEVEL"),
+                         Level = r.Field<int>("LEVEL"),
                          Id = r.Field<int>("ResourceId"),
-                         parentId = r.Field<int>("ParentId"),
-                         docType = r.Field<int>("ResourceId").ToString(),
-                         parentDocType = r.Field<int>("ParentId").ToString(),
-                         docFolderName = ((r.Field<int>("LEVEL") == 0) ? $@"/{bridgeIdentifier}" :
-                         string.Concat(((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderName.ToString())),
-                         docFolderDescription = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderDescription.ToString(),
-                         docFolderPath = string.Empty,
-                         metaDataGuid = Guid.NewGuid().CleanGuid()
+                         ParentId = r.Field<int>("ParentId"),
+                         DocType = r.Field<int>("ResourceId").ToString(),
+                         ParentDocType = r.Field<int>("ParentId").ToString(),
+                         DocFolderName = ((r.Field<int>("LEVEL") == 0) ? $@"/{bridgeIdentifier}" :
+                         string.Concat(((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION"))))?.folderName.ToString())),
+                         DocFolderDescription = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION"))))?.folderDescription.ToString(),
+                         DocFolderPath = string.Empty,
+                         MetaDataGuid = Guid.NewGuid().CleanGuid()
                      })
                     .ToDictionary(m => m.Id);
             //dict.Dump();
@@ -537,16 +541,16 @@ namespace DocumentManagerUtil
             {
                 List<DocFolder> folder = docFolders;
                 DocFolder item = kvp.Value;
-                if (item.parentId >= 0)
+                if (item.ParentId >= 0)
                 {
-                    folder = dict[item.parentId].docSubFolder;
+                    folder = dict[item.ParentId].DocSubFolder;
                 }
 
-                if (item.level > 1) // a real subfolder e.g. UW or SPI/OS
+                if (item.Level > 1) // a real subfolder e.g. UW or SPI/OS
                 {
                     //Console.WriteLine(item.parentId);
                     // Console.WriteLine($@"{dict[0].docFolderName}/{dict[item.parentId].docFolderName}/{item.docFolderName}"  );
-                    item.docFolderPath = Regex.Replace(string.Concat(prefix, System.IO.Path.Combine(dict[0].docFolderName, dict[item.parentId].docFolderName, item.docFolderName)), @"(?i)[\\]+", @"/", RegexOptions.IgnoreCase);
+                    item.DocFolderPath = Regex.Replace(string.Concat(prefix, System.IO.Path.Combine(dict[0].DocFolderName, dict[item.ParentId].DocFolderName, item.DocFolderName)), @"(?i)[\\]+", @"/", RegexOptions.IgnoreCase);
                 }
 
                 folder.Add(item);
@@ -555,6 +559,18 @@ namespace DocumentManagerUtil
 
             var jsonString = $"{{ \"{jsonRoot}\": {JsonConvert.SerializeObject(docFolders, Newtonsoft.Json.Formatting.Indented)} {Environment.NewLine} }}";
             return jsonString;
+
+            }
+            catch (NullReferenceException nullEx)
+            {
+                Console.WriteLine(nullEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
         }
 
         private IEnumerable<JToken> GetBridgeFoldersByTypeKey(string json, string docTypeKey)
@@ -617,19 +633,19 @@ namespace DocumentManagerUtil
             dtFolders.Rows.Cast<DataRow>()
                      .Select(r => new DocFolder
                      {
-                         level = r.Field<int>("LEVEL"),
+                         Level = r.Field<int>("LEVEL"),
                          Id = r.Field<int>("ResourceId"),
-                         parentId = r.Field<int>("ParentId"),
-                         docType = r.Field<int>("ResourceId").ToString(),
-                         parentDocType = r.Field<int>("ParentId").ToString(),
-                         docFolderName = ((r.Field<int>("LEVEL") == 0) ? string.Empty :
+                         ParentId = r.Field<int>("ParentId"),
+                         DocType = r.Field<int>("ResourceId").ToString(),
+                         ParentDocType = r.Field<int>("ParentId").ToString(),
+                         DocFolderName = ((r.Field<int>("LEVEL") == 0) ? string.Empty :
                          string.Concat(((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderName.ToString())),
-                         docFolderDescription = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderDescription.ToString(),
-                         docFolderPath = string.Empty,
-                         metaDataGuid = Guid.NewGuid().CleanGuid(),
-                         appSettingsKeyName = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderDescription.ToString().Replace(" ", "_").Replace("___", "_").Replace("__", "_").Replace("-", "_"),
-                         appSettingsValue = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderName.ToString(),
-                         appSettingsFolderPath = string.Empty
+                         DocFolderDescription = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderDescription.ToString(),
+                         DocFolderPath = string.Empty,
+                         MetaDataGuid = Guid.NewGuid().CleanGuid(),
+                         AppSettingsKeyName = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderDescription.ToString().Replace(" ", "_").Replace("___", "_").Replace("__", "_").Replace("-", "_"),
+                         AppSettingsValue = ((dynamic)(JsonConvert.DeserializeObject(r.Field<string>("FOLDERDEFINITION")))).folderName.ToString(),
+                         AppSettingsFolderPath = string.Empty
                      })
                     .ToDictionary(m => m.Id);
 
@@ -640,9 +656,9 @@ namespace DocumentManagerUtil
             {
                 List<DocFolder> folder = docFolders;
                 DocFolder item = kvp.Value;
-                if (item.parentId >= 0)
+                if (item.ParentId >= 0)
                 {
-                    folder = dict[item.parentId].docSubFolder;
+                    folder = dict[item.ParentId].DocSubFolder;
                 }
                 var serialize = "";
 
@@ -651,35 +667,35 @@ namespace DocumentManagerUtil
                 var stripCharsPattern = @"(?i)(?<chars>[\W.,;_@_\- -[\\/]])+|(?<slashes>[\\/])+";
                 var stripCharsReplace = @"_";
 
-                switch (item.level)
+                switch (item.Level)
                 {
                     case 0:
-                        item.docFolderPath = "/";
-                        item.appSettingsFolderPath = string.Empty;
+                        item.DocFolderPath = "/";
+                        item.AppSettingsFolderPath = string.Empty;
                         break;
 
                     case 1:
                         {
-                            item.docFolderPath = Regex.Replace(string.Concat("/", item.docFolderName, "/"), regexWinBackSlashPattern, replacePattern, RegexOptions.IgnoreCase);
-                            serialize = Newtonsoft.Json.JsonConvert.SerializeXmlNode(GetAppString(item.appSettingsKeyName, string.Empty, string.Concat(item.docFolderPath)), Newtonsoft.Json.Formatting.None, true);
-                            item.appSettingsFolderPath = serialize;
+                            item.DocFolderPath = Regex.Replace(string.Concat("/", item.DocFolderName, "/"), regexWinBackSlashPattern, replacePattern, RegexOptions.IgnoreCase);
+                            serialize = Newtonsoft.Json.JsonConvert.SerializeXmlNode(GetAppString(item.AppSettingsKeyName, string.Empty, string.Concat(item.DocFolderPath)), Newtonsoft.Json.Formatting.None, true);
+                            item.AppSettingsFolderPath = serialize;
                             break;
                         }
                     case 2:
                         {
-                            item.docFolderPath = Regex.Replace(string.Concat("/", dict[item.parentId].docFolderName, "/", item.docFolderName)
+                            item.DocFolderPath = Regex.Replace(string.Concat("/", dict[item.ParentId].DocFolderName, "/", item.DocFolderName)
                             , regexWinBackSlashPattern
                             , replacePattern, RegexOptions.IgnoreCase);
                             serialize = Newtonsoft.Json.JsonConvert.SerializeXmlNode(
                             GetAppString(string.Concat(
                              Regex.Replace(
-                             dict[item.parentId].docFolderDescription.Trim(), stripCharsPattern
+                             dict[item.ParentId].DocFolderDescription.Trim(), stripCharsPattern
                              , stripCharsReplace
                              , RegexOptions.IgnoreCase)
                              .ToLower()
                              .TrimEnd('_')
-                             .TrimStart('_'), stripCharsReplace, item.appSettingsKeyName).ToLower(), Regex.Replace(item.docFolderName.ToLower().Trim(), stripCharsPattern, stripCharsReplace).ToLower(), string.Concat(item.docFolderPath, "/")), Newtonsoft.Json.Formatting.None, true);
-                            item.appSettingsFolderPath = serialize;
+                             .TrimStart('_'), stripCharsReplace, item.AppSettingsKeyName).ToLower(), Regex.Replace(item.DocFolderName.ToLower().Trim(), stripCharsPattern, stripCharsReplace).ToLower(), string.Concat(item.DocFolderPath, "/")), Newtonsoft.Json.Formatting.None, true);
+                            item.AppSettingsFolderPath = serialize;
                             break;
 
                         }
