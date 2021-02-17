@@ -66,6 +66,9 @@
     <PackageReference Include="Oracle.ManagedDataAccess">
       <Version>19.10.1</Version>
     </PackageReference>
+    <PackageReference Include="System.Linq.Dynamic.Core">
+      <Version>1.2.8</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

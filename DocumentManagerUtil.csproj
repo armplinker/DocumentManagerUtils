@@ -58,6 +58,9 @@
     <PackageReference Include="Oracle.ManagedDataAccess">
       <Version>19.10.1</Version>
     </PackageReference>
+    <PackageReference Include="System.Linq.Dynamic.Core">
+      <Version>1.2.8</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
