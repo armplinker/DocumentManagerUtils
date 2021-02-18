@@ -13,6 +13,8 @@ using System.Linq.Dynamic.Core;
 
 namespace DocMgrUtilTestProject1
 {
+
+
     [TestClass]
     public class UnitTest1
     {
@@ -25,7 +27,7 @@ namespace DocMgrUtilTestProject1
         public void TestGetBridgeFoldersJson()
         {
              
-            var utils =new DocMgrUtils();
+            var utils =DocMgrUtils.Instance;
             var brkey = @"413700012101002";
             var json = utils.GetAllBridgeFoldersJson(brkey);
 
@@ -34,10 +36,97 @@ namespace DocMgrUtilTestProject1
         }
 
         [TestMethod]
+        public void TestIsAllowedTypeSubTypePairES()
+        {
+
+            var utils = DocMgrUtils.Instance;
+            var key = "5010";
+            var value = "50";
+            Assert.IsTrue(utils.IsAllowedTypeSubTypePair(key, value), $"Combination of type {key} and subtype {value} not allowed");
+
+            Console.WriteLine($"Allowed combination type { key} / subtype { value} - expected");
+
+
+        }
+
+        [TestMethod]
+        public void TestIsAllowedTypeSubTypePair2EF()
+        {
+
+            var utils = DocMgrUtils.Instance;
+            var key = "4010";
+            var value = "50";
+            Assert.IsFalse(utils.IsAllowedTypeSubTypePair(key, value), $"Invalid combination of type {key} and subtype {value} found.");
+
+            Console.WriteLine($"Type {key} / subtype {value} not found - expected");
+
+
+        }
+
+
+        [TestMethod]
+        public void TestIsAllowedTypeKeyES()
+        {
+
+            var utils = DocMgrUtils.Instance;
+            var key = "50";
+           // var value = "5010";
+            Assert.IsTrue(utils.IsAllowedType(key ), $"Type {key}   not allowed");
+
+            Console.WriteLine($"Allowed type {key}- expected");
+
+
+        }
+
+        [TestMethod]
+        public void TestIsAllowedTypeKey2EF()
+        {
+
+            var utils = DocMgrUtils.Instance;
+            var key = "NB";
+            // var value = "5010";
+            Assert.IsFalse(utils.IsAllowedType(key), $"Invalid type {key}  found.");
+
+            Console.WriteLine($"Invalid type {key}- expected");
+
+
+        }
+
+
+        [TestMethod]
+        public void TestIsAllowedSubTypeKeyES()
+        {
+
+            var utils = DocMgrUtils.Instance;
+            var key = "5010";
+           
+            Assert.IsTrue(utils.IsAllowedSubType(key), $"Type {key}   not allowed");
+
+            Console.WriteLine($"Allowed subtype {key}- expected");
+
+
+        }
+
+        [TestMethod]
+        public void TestIsAllowedSubTypeKey2EF()
+        {
+
+            var utils = DocMgrUtils.Instance;
+            
+            var key = "1910";
+            Assert.IsFalse(utils.IsAllowedSubType(key), $"Invalid type {key}  found.");
+
+            Console.WriteLine($"Invalid subtype {key} - expected");
+
+
+        }
+
+
+        [TestMethod]
         public void TestGetDocFolder()
         {
             //  public string GetBridgeFolders(string bridgeIdentifier, OracleConnection conn)
-            var utils = new DocMgrUtils();
+            var utils = DocMgrUtils.Instance;
             var brkey = @"413700012101002"; //413700012101002
             var folderName = utils.GetDocFolder(brkey, "1100");
 
@@ -50,7 +139,7 @@ namespace DocMgrUtilTestProject1
         public void TestGetDocFoldersMany()
         {
             //  public string GetBridgeFolders(string bridgeIdentifier, OracleConnection conn)
-            var utils = new DocMgrUtils();
+            var utils = DocMgrUtils.Instance;
 
             var cmd = new OracleCommand()
             {
@@ -110,7 +199,7 @@ namespace DocMgrUtilTestProject1
         [TestMethod]
         public void TestGetDocFoldersJSONForBridge()
         {
-            var utils = new DocMgrUtils();
+            var utils = DocMgrUtils.Instance;
 
             var brkey = @"413700012101002";
 
@@ -194,7 +283,7 @@ namespace DocMgrUtilTestProject1
         [TestMethod]
         public void TestGetAllBridgeFoldersFromJSON()
         {
-            var utils = new DocMgrUtils();
+            var utils = DocMgrUtils.Instance;
 
           
 
@@ -284,7 +373,7 @@ namespace DocMgrUtilTestProject1
         [TestMethod]
         public void TestGetFormFoldersFromJSON()
         {
-            var utils = new DocMgrUtils();
+            var utils = DocMgrUtils.Instance;
             string formsRootFolder = string.Concat("X:/", "Docs","/", "Forms");
             var jsonRootId = @"folders";
             string formsJson = utils.GenerateFormFolderDefs(jsonRootId, formsRootFolder);
@@ -300,7 +389,7 @@ namespace DocMgrUtilTestProject1
         [TestMethod]
         public void TestGetDocFolderAppSettingsFromJSON()
         {
-            var utils = new DocMgrUtils();
+            var utils = DocMgrUtils.Instance;
 
             //var bridgeIdentifier = @"000301061704820";
 
