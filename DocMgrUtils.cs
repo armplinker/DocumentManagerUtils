@@ -12,11 +12,15 @@ using Oracle.ManagedDataAccess.Client;
 using System.Linq.Dynamic.Core;
 using System.Net.Sockets;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using HelpersLibrary;
+
+
 
 namespace DocumentManagerUtil
 {
     public class DocMgrUtils
     {
+      
 
         private const string DocDrive = "X:\\";
         private const string DocRootFolder = "Docs";
@@ -342,27 +346,7 @@ namespace DocumentManagerUtil
                                                }).ToDictionary(t => t.Id);
 
 
-            //var dict =
-            //dtFolders.Rows.Cast<DataRow>()
-            //         .Where (r2 => (r2.Field<string>("BRIDGE_FOLDER").ToString().Contains("T") &&
-            //                               r2.Field<int>("PARENT_ID").ToString() == r2.Field<int>("RESOURCE_ID").ToString().Substring(0, 2)) //1099,10
-            //         || (r2.Field<int>("RESOURCE_ID").ToString() != "0" && r2.Field<int>("PARENT_ID").ToString() == "0") // 0,0
-            //         || (r2.Field<int>("RESOURCE_ID").ToString() == "0" && r2.Field<int>("PARENT_ID").ToString() == "-1")) // 10, 0
-            //         .Select(r => new DocFolder
-            //         {
-            //             Level = row.Field<int>("LEVEL"),
-            //             Id = row.Field<int>("RESOURCE_ID"),
-            //             Parent_Id = row.Field<int>("PARENT_ID"),
-            //             DocType = row.Field<int>("RESOURCE_ID").ToString(),
-            //             Parent_DocType = row.Field<int>("PARENT_ID").ToString(),
-            //             DocFolderName = ((row.Field<int>("LEVEL") == 0) ? $@"/" :
-            //             string.Concat(((dynamic)(JsonConvert.DeserializeObject(row.Field<string>("FOLDER_DEFINITION"))))?.folderName.ToString())),
-            //             DocfolderDescription = @"",
-            //             DocFolderPath = (row.Field<int>("LEVEL") == 0) ? "/" : string.Empty,
-            //             MetaDataGuid = Guid.NewGuid().CleanGuid()
-            //         })
-            //        .ToDictionary(m => m.Id);
-
+           
             var docFolders = new List<DocFolder>();
 
             foreach (var kvp in dict)
@@ -574,18 +558,18 @@ namespace DocumentManagerUtil
             var dict = (from row in DocFoldersTable.AsEnumerable()
                         select new DocFolder
                         {
-                            Level = row.Field<int>("LEVEL"),
-                            Id = row.Field<int>("RESOURCE_ID"),
-                            Parent_Id = row.Field<int>("PARENT_ID"),
-                            DocType = row.Field<int>("RESOURCE_ID").ToString(),
-                            Parent_DocType = row.Field<int>("PARENT_ID").ToString(),
-                            DocFolderName = ((row.Field<int>("LEVEL") == 0) ? string.Empty :
-                                         string.Concat(((dynamic)(JsonConvert.DeserializeObject(row.Field<string>("FOLDER_DEFINITION")))).folderName.ToString())),
-                            DocFolderDescription = ((dynamic)(JsonConvert.DeserializeObject(row.Field<string>("FOLDER_DEFINITION")))).folderDescription.ToString(),
+                            Level = row.Field<int>(@"LEVEL"),
+                            Id = row.Field<int>(@"RESOURCE_ID"),
+                            Parent_Id = row.Field<int>(@"PARENT_ID"),
+                            DocType = row.Field<int>(@"RESOURCE_ID").ToString(),
+                            Parent_DocType = row.Field<int>(@"PARENT_ID").ToString(),
+                            DocFolderName = ((row.Field<int>(@"LEVEL") == 0) ? string.Empty :
+                                         string.Concat(((dynamic)(JsonConvert.DeserializeObject(row.Field<string>(@"FOLDER_DEFINITION"))))?.folderName.ToString())),
+                            DocFolderDescription = ((dynamic)(JsonConvert.DeserializeObject(row.Field<string>(@"FOLDER_DEFINITION"))))?.folderDescription.ToString(),
                             DocFolderPath = string.Empty,
                             MetaDataGuid = Guid.NewGuid().CleanGuid(),
-                            AppSettingsKeyName = ((dynamic)(JsonConvert.DeserializeObject(row.Field<string>("FOLDER_DEFINITION")))).folderDescription.ToString().Replace(" ", "_").Replace("___", "_").Replace("__", "_").Replace("-", "_"),
-                            AppSettingsValue = ((dynamic)(JsonConvert.DeserializeObject(row.Field<string>("FOLDER_DEFINITION")))).folderName.ToString(),
+                            AppSettingsKeyName = ((dynamic)(JsonConvert.DeserializeObject(row.Field<string>(@"FOLDER_DEFINITION"))))?.folderDescription.ToString().Replace(" ", "_").Replace("___", "_").Replace("__", "_").Replace("-", "_"),
+                            AppSettingsValue = ((dynamic)(JsonConvert.DeserializeObject(row.Field<string>(@"FOLDER_DEFINITION"))))?.folderName.ToString(),
                             //             AppSettingsFolderPath = string.Empty
                         }).ToDictionary(t => t.Id);
 
@@ -712,40 +696,46 @@ namespace DocumentManagerUtil
                 ConnectionString = "Data Source=10.181.74.44:1521/ESOADEV.WORLD; User ID=KDOT_BLP; Password=eis3nh0wer;"
             };
 
-            var cmd = new OracleCommand()
-            {
-                CommandText = @"SELECT DISTINCT Br.Brkey
+            var sqlString = @"SELECT DISTINCT Br.Brkey
                       -- ,Br.Bridge_Gd
                        ,P2.Shortdesc AS District
                        ,P1.Shortdesc AS County
                        ,Nvl(Br.Bridgegroup, 'UNASSIGNED') AS Bridgegroup
                        ,P1.Parmvalue AS Kdot_County
                        ,Br.County AS Nbi_County
-          FROM Kdotblp_Documents Kd
-         INNER JOIN Bridge Br
-            ON Kd.Bridge_Gd = Br.Bridge_Gd
-         INNER JOIN Paramtrs P1
-            ON P1.Longdesc = Br.County
-           AND P1.Table_Name = 'bridge'
-           AND P1.Field_Name = 'county'
-         INNER JOIN Paramtrs P2
-            ON P2.Parmvalue = Br.District
-           AND P2.Table_Name = 'bridge'
-           AND P2.Field_Name = 'district'
-         WHERE Kd.Doc_Status = '1' AND kd.BRKEY =:the_brkey  -- <=1000
-         GROUP BY Br.Brkey
+                          FROM Kdotblp_Documents Kd
+                         INNER JOIN Bridge Br
+                            ON Kd.Bridge_Gd = Br.Bridge_Gd
+                         INNER JOIN Paramtrs P1
+                            ON P1.Longdesc = Br.County
+                           AND P1.Table_Name = 'bridge'
+                           AND P1.Field_Name = 'county'
+                         INNER JOIN Paramtrs P2
+                            ON P2.Parmvalue = Br.District
+                           AND P2.Table_Name = 'bridge'
+                           AND P2.Field_Name = 'district'
+                         WHERE Kd.Doc_Status = '1' AND kd.BRKEY =:the_brkey  -- <=1000
+                         GROUP BY Br.Brkey
                  ,Br.Bridge_Gd
                  ,P2.Shortdesc
                  ,P1.Shortdesc
                  ,Nvl(Br.Bridgegroup, 'UNASSIGNED')
                  ,P1.Parmvalue
                  ,Br.County
-        ",
+        ";
 
+            sqlString.CheckSyntax(true);
+            sqlString = sqlString.FormatSqlString();
+
+
+            var cmd = new OracleCommand()
+            {
+                CommandText = sqlString,
                 CommandType = CommandType.Text,
                 BindByName = true,
                 Connection = conn
             };
+
 
             var parm = new OracleParameter()
             {
@@ -767,10 +757,10 @@ namespace DocumentManagerUtil
                 cmd.Connection.Close();
             }
 
-            // string bridgeGd = dt.Rows[0].Field<string>("BRIDGE_GD");
-            string district = dt.Rows[0].Field<string>("DISTRICT");
-            string county = dt.Rows[0].Field<string>("COUNTY");
-            string bridgeGroup = dt.Rows[0].Field<string>("BRIDGEGROUP");
+            // string bridgeGd = dt.Rows[0].Field<string>(@"BRIDGE_GD");
+            string district = dt.Rows[0].Field<string>(@"DISTRICT");
+            string county = dt.Rows[0].Field<string>(@"COUNTY");
+            string bridgeGroup = dt.Rows[0].Field<string>(@"BRIDGEGROUP");
             string docRoot = System.IO.Path.Combine(DocDrive, DocRootFolder);
             string jsonRootId = @"folders";
 
@@ -846,45 +836,33 @@ namespace DocumentManagerUtil
                     where kvp.Key == theDocSubtypeKey
                     select kvp).Any();
         }
+
+        public void DocO()
+        {
+            // alternative folder building code
+            //var dict =
+            //dtFolders.Rows.Cast<DataRow>()
+            //         .Where (r2 => (r2.Field<string>("BRIDGE_FOLDER").ToString().Contains("T") &&
+            //                               r2.Field<int>("PARENT_ID").ToString() == r2.Field<int>("RESOURCE_ID").ToString().Substring(0, 2)) //1099,10
+            //         || (r2.Field<int>("RESOURCE_ID").ToString() != "0" && r2.Field<int>("PARENT_ID").ToString() == "0") // 0,0
+            //         || (r2.Field<int>("RESOURCE_ID").ToString() == "0" && r2.Field<int>("PARENT_ID").ToString() == "-1")) // 10, 0
+            //         .Select(r => new DocFolder
+            //         {
+            //             Level = row.Field<int>("LEVEL"),
+            //             Id = row.Field<int>("RESOURCE_ID"),
+            //             Parent_Id = row.Field<int>("PARENT_ID"),
+            //             DocType = row.Field<int>("RESOURCE_ID").ToString(),
+            //             Parent_DocType = row.Field<int>("PARENT_ID").ToString(),
+            //             DocFolderName = ((row.Field<int>("LEVEL") == 0) ? $@"/" :
+            //             string.Concat(((dynamic)(JsonConvert.DeserializeObject(row.Field<string>("FOLDER_DEFINITION"))))?.folderName.ToString())),
+            //             DocfolderDescription = @"",
+            //             DocFolderPath = (row.Field<int>("LEVEL") == 0) ? "/" : string.Empty,
+            //             MetaDataGuid = Guid.NewGuid().CleanGuid()
+            //         })
+            //        .ToDictionary(m => m.Id);
+
+        }
     }
 
-    public static class Helpers
-    {
-        /// <summary>
-        /// Static constructor for Helpers
-        /// A static constructor is used to initialize any static data, or to perform a particular action that needs performed once only. It is called automatically before the first instance is created or any static members are referenced.
-        /// Static constructors have the following properties:
-        ///   A static constructor does not take access modifiers or have parameters.
-        ///   A static constructor is called automatically to initialize the class before the first instance is created or any static members are referenced.
-        ///   A static constructor cannot be called directly.
-        ///   The user has no control on when the static constructor is executed in the program.
-        ///   A typical use of static constructors is when the class is using a log file and the constructor is used to write entries to this file.
-        ///   Static constructors are also useful when creating wrapper classes for unmanaged code, when the constructor can call the LoadLibrary method.
-        /// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors
-        /// </summary>
-        static Helpers()
-        {
-            ;
-        }
-        /// <summary>
-        /// Helper method to return a generated GUID as a string formatted for BrM
-        /// </summary>
-        /// <param name="aGuid"></param>
-        /// <returns>a string that is a Guid formatted for BrM</returns>
-        public static string CleanGuid(this Guid aGuid)
-        {
-            return aGuid.ToString().ToUpper().Replace("-", "");
-        }
 
-        public static string CleanGuid(this string aGuidString, int length = 32, string regexPattern = @"[^0-9A-Z]+")
-        {
-            if (!(aGuidString.Length <= length))
-                throw new ArgumentException(
-                    $"The starter string for Guid generation is > the limit of {length} characters long {aGuidString.Length}");
-            aGuidString = string.IsNullOrEmpty(aGuidString)
-                ? Guid.NewGuid().ToString().ToUpper()
-                : aGuidString.ToUpper();
-            return Regex.Replace(aGuidString, regexPattern, string.Empty);
-        }
-    }
 }

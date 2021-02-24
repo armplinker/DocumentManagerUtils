@@ -42,6 +42,12 @@
     <Reference Include="DocumentManagerUtil">
       <HintPath>..\bin\Debug\DocumentManagerUtil.dll</HintPath>
     </Reference>
+    <Reference Include="gudusoft.gsqlparser">
+      <HintPath>..\bin\Debug\gudusoft.gsqlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="HelpersLibrary">
+      <HintPath>..\..\HelpersLibrary\bin\Debug\HelpersLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />

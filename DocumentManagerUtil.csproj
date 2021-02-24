@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="gudusoft.gsqlparser, Version=0.0.0.0, Culture=neutral, PublicKeyToken=2b2fd676a50a6d43" />
+    <Reference Include="HelpersLibrary">
+      <HintPath>..\HelpersLibrary\bin\Debug\HelpersLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
